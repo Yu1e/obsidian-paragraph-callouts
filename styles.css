@@ -13,11 +13,11 @@
 .paragraph-callouts-settings .callout-rule-summary {
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 8px 12px;
+  gap: 8px;
+  padding: 10px 14px;
   cursor: pointer;
   user-select: none;
-  font-size: 13px;
+  font-size: 16px;
 }
 
 .paragraph-callouts-settings .callout-rule-summary:hover {
@@ -27,21 +27,21 @@
 .paragraph-callouts-settings .callout-rule-summary .callout-rule-index {
   color: var(--text-muted);
   font-weight: 400;
-  font-size: 12px;
+  font-size: 15px;
 }
 
 .paragraph-callouts-settings .callout-rule-summary .callout-rule-prefix-code {
   font-family: var(--font-monospace);
-  font-size: 11px;
+  font-size: 14px;
   background: var(--background-primary);
-  padding: 1px 5px;
-  border-radius: 3px;
+  padding: 2px 7px;
+  border-radius: 4px;
   color: var(--text-muted);
   margin-left: auto;
 }
 
 .paragraph-callouts-settings .callout-rule-body {
-  padding: 0 12px 10px;
+  padding: 0 14px 12px;
   border-top: 1px solid var(--background-modifier-border);
 }
 
@@ -52,37 +52,37 @@
   top: 0;
   z-index: 10;
   background: var(--background-secondary);
-  padding: 8px 0 4px;
-  margin: 0 -12px;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding: 10px 0 6px;
+  margin: 0 -14px;
+  padding-left: 14px;
+  padding-right: 14px;
   border-bottom: 1px solid var(--background-modifier-border);
 }
 
 .paragraph-callouts-settings .callout-live-preview {
   border-radius: 6px;
-  padding: 8px 14px;
-  font-size: 13px;
+  padding: 10px 16px;
+  font-size: 15px;
   line-height: 1.5;
   transition: all 0.15s ease;
 }
 
 .paragraph-callouts-settings .callout-live-preview-label {
-  font-size: 10px;
+  font-size: 12px;
   color: var(--text-faint);
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  margin-bottom: 3px;
+  margin-bottom: 4px;
 }
 
 /* ── Section Headers ── */
 
 .paragraph-callouts-settings .callout-rule-body h4 {
-  margin: 10px 0 4px;
-  padding-bottom: 3px;
+  margin: 12px 0 6px;
+  padding-bottom: 4px;
   border-bottom: 1px solid var(--background-modifier-border);
   color: var(--text-muted);
-  font-size: 11px;
+  font-size: 13px;
   text-transform: uppercase;
   letter-spacing: 0.7px;
   font-weight: 600;
@@ -91,7 +91,7 @@
 /* ── Compact Settings ── */
 
 .paragraph-callouts-settings .setting-item {
-  padding: 4px 0 !important;
+  padding: 5px 0 !important;
   border: none !important;
 }
 
@@ -101,12 +101,25 @@
 }
 
 .paragraph-callouts-settings .setting-item-name {
-  font-size: 12px !important;
+  font-size: 15px !important;
 }
 
 .paragraph-callouts-settings .setting-item-description {
-  font-size: 10px !important;
-  line-height: 1.3;
+  font-size: 13px !important;
+  line-height: 1.4;
+}
+
+/* ── Prefix note ── */
+
+.paragraph-callouts-settings .callout-prefix-note {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin: 4px 0 8px;
+  padding: 6px 10px;
+  background: var(--background-primary);
+  border-radius: 4px;
+  border-left: 3px solid var(--interactive-accent);
 }
 
 /* ── Inline Row (two settings side by side) ── */
@@ -126,12 +139,12 @@
 .color-picker-wrapper {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
 }
 
 .color-picker-native {
-  width: 32px;
-  height: 28px;
+  width: 36px;
+  height: 32px;
   padding: 1px;
   border: 1px solid var(--background-modifier-border);
   border-radius: 4px;
@@ -145,20 +158,20 @@
 
 .color-picker-hex {
   font-family: var(--font-monospace);
-  font-size: 11px;
-  padding: 4px 5px;
+  font-size: 14px;
+  padding: 5px 6px;
   border: 1px solid var(--background-modifier-border);
   border-radius: 4px;
   background: var(--background-primary);
   color: var(--text-normal);
-  width: 70px;
+  width: 78px;
 }
 
 /* ── Danger zone ── */
 
 .callout-danger-zone {
-  margin-top: 6px;
-  padding-top: 6px;
+  margin-top: 8px;
+  padding-top: 8px;
   border-top: 1px dashed var(--background-modifier-border);
   display: flex;
   gap: 6px;
@@ -170,22 +183,171 @@
 
 /* Отступ текста от рамки в редакторе (Live Preview / Source) */
 [class*="paragraph-callout-"].cm-line {
-  padding-left: 10px !important;   /* отступ текста от ЛЕВОЙ рамки, по умолчанию 20 */
-  padding-right: 12px !important;  /* отступ текста от ПРАВОЙ рамки 12 */
-  padding-top: 0px !important;     /* отступ текста от ВЕРХНЕЙ рамки 6 */
-  padding-bottom: 0px !important;  /* отступ текста от НИЖНЕЙ рамки 6 */
+  padding-left: 10px !important;
+  padding-right: 12px !important;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
 }
 
 /* Отступ текста от рамки в режиме чтения (Reading View) */
 p[class*="paragraph-callout-"] {
-  padding-left: 10px !important;   /* отступ текста от ЛЕВОЙ рамки 20 */
-  padding-right: 12px !important;  /* отступ текста от ПРАВОЙ рамки 12 */
-  padding-top: 0px !important;     /* отступ текста от ВЕРХНЕЙ рамки 8 */
-  padding-bottom: 0px !important;  /* отступ текста от НИЖНЕЙ рамки 8 */
+  padding-left: 10px !important;
+  padding-right: 12px !important;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
 }
 
-/* ── Prefix replacement widget ── */
+/* ═══════════════════════════════════════════
+   Prefix replacement widget — text & emoji
+   ═══════════════════════════════════════════ */
+
 .paragraph-callout-prefix-replacement {
   font-style: normal;
   margin-right: 2px;
+  vertical-align: baseline;
+}
+
+/* ═══════════════════════════════════════════
+   Prefix replacement widget — SVG
+   ═══════════════════════════════════════════ */
+
+/* Container for inline SVG icon */
+.paragraph-callout-prefix-svg {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: baseline;
+  margin-right: 4px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* The SVG element itself — scale to text */
+.paragraph-callout-prefix-svg svg {
+  display: inline-block;
+  height: 1.15em;
+  width: auto;
+  vertical-align: -0.15em;       /* optical alignment with text baseline */
+  fill: currentColor;            /* inherit text color by default */
+  flex-shrink: 0;
+}
+
+/* Ensure SVG doesn't blow up if viewBox is missing */
+.paragraph-callout-prefix-svg svg:not([viewBox]) {
+  height: 1.15em;
+  width: 1.15em;
+}
+
+/* SVG inside CM6 editor lines */
+.cm-line .paragraph-callout-prefix-svg {
+  position: relative;
+  top: 0.05em;                   /* tiny nudge for CM6 line alignment */
+}
+
+.cm-line .paragraph-callout-prefix-svg svg {
+  height: 1.15em;
+  width: auto;
+}
+
+/* SVG inside reading-view paragraphs */
+p .paragraph-callout-prefix-svg svg {
+  height: 1.15em;
+  width: auto;
+}
+
+/* SVG inside live preview in settings */
+.callout-live-preview .paragraph-callout-prefix-svg {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: baseline;
+  margin-right: 4px;
+}
+
+.callout-live-preview .paragraph-callout-prefix-svg svg {
+  height: 1.15em;
+  width: auto;
+  vertical-align: -0.15em;
+  fill: currentColor;
+}
+
+/* ═══════════════════════════════════════════
+   Settings: SVG textarea
+   ═══════════════════════════════════════════ */
+
+.callout-svg-textarea-wrap {
+  margin: 6px 0 10px;
+}
+
+.callout-svg-textarea {
+  display: block;
+  width: 100%;
+  min-height: 80px;
+  max-height: 240px;
+  resize: vertical;
+  font-family: var(--font-monospace);
+  font-size: 12px;
+  line-height: 1.5;
+  padding: 8px 10px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+  background: var(--background-primary);
+  color: var(--text-normal);
+  tab-size: 2;
+  white-space: pre;
+  overflow: auto;
+}
+
+.callout-svg-textarea:focus {
+  outline: none;
+  border-color: var(--interactive-accent);
+  box-shadow: 0 0 0 2px rgba(var(--interactive-accent-rgb, 99, 135, 210), 0.2);
+}
+
+.callout-svg-textarea::placeholder {
+  color: var(--text-faint);
+  font-style: italic;
+}
+
+/* ═══════════════════════════════════════════
+   Settings: SVG preview box
+   ═══════════════════════════════════════════ */
+
+.callout-svg-preview-wrap {
+  margin: 4px 0 12px;
+}
+
+.callout-svg-preview-label {
+  font-size: 11px;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.callout-svg-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: var(--background-primary);
+  border: 1px dashed var(--background-modifier-border);
+  border-radius: 6px;
+  min-height: 48px;
+}
+
+/* SVG inside the settings preview box — larger for inspection */
+.callout-svg-preview svg {
+  height: 48px;
+  width: auto;
+  max-width: 100%;
+  fill: currentColor;
+  color: var(--text-normal);
+}
+
+/* If the SVG has its own colors, don't override them */
+.callout-svg-preview svg [fill]:not([fill="none"]):not([fill="currentColor"]) {
+  fill: unset;
+}
+
+.callout-svg-preview svg [stroke]:not([stroke="none"]):not([stroke="currentColor"]) {
+  stroke: unset;
 }
