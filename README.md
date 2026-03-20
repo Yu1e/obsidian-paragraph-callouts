@@ -1,5 +1,7 @@
 # Paragraph Callouts Plus (English)
 
+![s](screenshot.png)
+
 **Plugin for [Obsidian](https://obsidian.md)** — style paragraphs as callouts based on a prefix character at the beginning of a line.
 
 > Based on [obsidian-paragraph-callouts](https://github.com/CodyBontecou/obsidian-paragraph-callouts) by **CodyBontecou**. Paragraph Callouts Plus is a fork with extended functionality.
@@ -44,10 +46,6 @@
 ```
 
 4. The paragraph is automatically highlighted according to the rule.
-
-## Screenshots
-
-*(coming soon)*
 
 ## Credits
 
@@ -103,10 +101,6 @@ MIT
 ```
 
 4. Абзац автоматически подсветится в соответствии с правилом.
-
-## Скриншоты
-
-*(скоро)*
 
 ## Благодарности
 
