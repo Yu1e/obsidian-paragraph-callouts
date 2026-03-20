@@ -1,34 +1,191 @@
-/* Paragraph Callouts – base styles */
+/* ═══════════════════════════════════════════
+   Settings UI — Compact & Structured
+   ═══════════════════════════════════════════ */
 
-.paragraph-callout {
-	padding: 4px 8px 4px 12px;
-	border-radius: 4px;
-	margin: 2px 0;
+.paragraph-callouts-settings .callout-rule-container {
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+  margin-bottom: 12px;
+  background: var(--background-secondary);
+  overflow: hidden;
 }
 
-.paragraph-callout-emoji {
-	margin-right: 6px;
-	font-size: 1.1em;
+.paragraph-callouts-settings .callout-rule-summary {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 13px;
 }
 
-/* ── Default callout types ─────────────────────────── */
-
-.paragraph-callout-alert {
-	background-color: rgba(255, 0, 0, 0.08);
-	border-left: 3px solid #e74c3c;
+.paragraph-callouts-settings .callout-rule-summary:hover {
+  background: var(--background-modifier-hover);
 }
 
-.paragraph-callout-question {
-	background-color: rgba(255, 200, 0, 0.08);
-	border-left: 3px solid #f39c12;
+.paragraph-callouts-settings .callout-rule-summary .callout-rule-index {
+  color: var(--text-muted);
+  font-weight: 400;
+  font-size: 12px;
 }
 
-.paragraph-callout-idea {
-	background-color: rgba(0, 200, 100, 0.08);
-	border-left: 3px solid #2ecc71;
+.paragraph-callouts-settings .callout-rule-summary .callout-rule-prefix-code {
+  font-family: var(--font-monospace);
+  font-size: 11px;
+  background: var(--background-primary);
+  padding: 1px 5px;
+  border-radius: 3px;
+  color: var(--text-muted);
+  margin-left: auto;
 }
 
-.paragraph-callout-note {
-	background-color: rgba(0, 100, 255, 0.08);
-	border-left: 3px solid #3498db;
+.paragraph-callouts-settings .callout-rule-body {
+  padding: 0 12px 10px;
+  border-top: 1px solid var(--background-modifier-border);
+}
+
+/* ── Sticky Preview ── */
+
+.paragraph-callouts-settings .callout-preview-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--background-secondary);
+  padding: 8px 0 4px;
+  margin: 0 -12px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.paragraph-callouts-settings .callout-live-preview {
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 13px;
+  line-height: 1.5;
+  transition: all 0.15s ease;
+}
+
+.paragraph-callouts-settings .callout-live-preview-label {
+  font-size: 10px;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 3px;
+}
+
+/* ── Section Headers ── */
+
+.paragraph-callouts-settings .callout-rule-body h4 {
+  margin: 10px 0 4px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid var(--background-modifier-border);
+  color: var(--text-muted);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  font-weight: 600;
+}
+
+/* ── Compact Settings ── */
+
+.paragraph-callouts-settings .setting-item {
+  padding: 4px 0 !important;
+  border: none !important;
+}
+
+.paragraph-callouts-settings .setting-item-info {
+  flex-shrink: 1;
+  min-width: 0;
+}
+
+.paragraph-callouts-settings .setting-item-name {
+  font-size: 12px !important;
+}
+
+.paragraph-callouts-settings .setting-item-description {
+  font-size: 10px !important;
+  line-height: 1.3;
+}
+
+/* ── Inline Row (two settings side by side) ── */
+
+.paragraph-callouts-settings .inline-row {
+  display: flex;
+  gap: 8px;
+}
+
+.paragraph-callouts-settings .inline-row > .setting-item {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ── Color Picker ── */
+
+.color-picker-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.color-picker-native {
+  width: 32px;
+  height: 28px;
+  padding: 1px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  cursor: pointer;
+  background: none;
+  flex-shrink: 0;
+}
+
+.color-picker-native::-webkit-color-swatch-wrapper { padding: 1px; }
+.color-picker-native::-webkit-color-swatch { border: none; border-radius: 3px; }
+
+.color-picker-hex {
+  font-family: var(--font-monospace);
+  font-size: 11px;
+  padding: 4px 5px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  background: var(--background-primary);
+  color: var(--text-normal);
+  width: 70px;
+}
+
+/* ── Danger zone ── */
+
+.callout-danger-zone {
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px dashed var(--background-modifier-border);
+  display: flex;
+  gap: 6px;
+}
+
+.callout-danger-zone .setting-item {
+  flex: 1;
+}
+
+/* Отступ текста от рамки в редакторе (Live Preview / Source) */
+[class*="paragraph-callout-"].cm-line {
+  padding-left: 10px !important;   /* отступ текста от ЛЕВОЙ рамки, по умолчанию 20 */
+  padding-right: 12px !important;  /* отступ текста от ПРАВОЙ рамки 12 */
+  padding-top: 0px !important;     /* отступ текста от ВЕРХНЕЙ рамки 6 */
+  padding-bottom: 0px !important;  /* отступ текста от НИЖНЕЙ рамки 6 */
+}
+
+/* Отступ текста от рамки в режиме чтения (Reading View) */
+p[class*="paragraph-callout-"] {
+  padding-left: 10px !important;   /* отступ текста от ЛЕВОЙ рамки 20 */
+  padding-right: 12px !important;  /* отступ текста от ПРАВОЙ рамки 12 */
+  padding-top: 0px !important;     /* отступ текста от ВЕРХНЕЙ рамки 8 */
+  padding-bottom: 0px !important;  /* отступ текста от НИЖНЕЙ рамки 8 */
+}
+
+/* ── Prefix replacement widget ── */
+.paragraph-callout-prefix-replacement {
+  font-style: normal;
+  margin-right: 2px;
 }
