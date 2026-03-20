@@ -1,9 +1,9 @@
 {
-  "id": "paragraph-callouts",
-  "name": "Paragraph Callouts",
-  "version": "1.0.0",
-  "minAppVersion": "0.15.0",
-  "description": "Inline paragraph callouts triggered by prefix characters like !, ?, ~, and ;.",
-  "author": "Cody Bontecou",
+  "id": "yule-paragraph-callouts-plus",
+  "name": "Yule Paragraph Callouts Plus",
+  "version": "1.2.0",
+  "minAppVersion": "1.2.0",
+  "description": "Style paragraphs as callouts with any prefix. Borders, accents, corners, synonyms, color pickers.",
+  "author": "Yule",
   "isDesktopOnly": false
 }
