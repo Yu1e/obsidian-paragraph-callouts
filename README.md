@@ -1,144 +1,116 @@
-# Paragraph Callouts Plus
+# Paragraph Callouts Plus (English)
 
-Плагин для [Obsidian](https://obsidian.md), который превращает обычные абзацы в стилизованные выноски (callouts) — по специальному символу-префиксу в начале строки.
+**Plugin for [Obsidian](https://obsidian.md)** — style paragraphs as callouts based on a prefix character at the beginning of a line.
 
-В отличие от стандартных Obsidian-каллаутов, вам не нужно использовать синтаксис `> [!note]`. Достаточно начать абзац с выбранного вами символа — и он автоматически превратится в красиво оформленный блок.
+> Based on [obsidian-paragraph-callouts](https://github.com/CodyBontecou/obsidian-paragraph-callouts) by **CodyBontecou**. Paragraph Callouts Plus is a fork with extended functionality.
 
-![Скриншот примера](https://img.shields.io/badge/Obsidian-плагин-7c3aed?style=for-the-badge&logo=obsidian)
+---
+
+## Features
+
+- **Callout rules** — create unlimited rules, each with its own prefix and style.
+- **Prefix + space** — a callout is triggered only when the prefix is followed by a space (`! text` → callout, `!text` → plain paragraph).
+- **Synonyms** — multiple prefixes per rule, space-separated (e.g. `⚠ WRN warning:`).
+- **Three prefix display modes:**
+  - **Show as-is** — the prefix remains in the text.
+  - **Hide** — the prefix is completely removed from display.
+  - **Replace** — the prefix is replaced with a custom character, emoji, text, or inline SVG icon.
+- **SVG icons** — paste SVG code directly in settings; it renders inline in place of the prefix.
+- **Flexible styling:**
+  - Background color with adjustable opacity.
+  - Text color.
+  - Border — color, width, style (solid / dashed / dotted / double), opacity.
+  - Left accent — separate color, width, opacity.
+  - Border radius, padding.
+- **Merging** — consecutive paragraphs with the same rule are visually joined.
+- **Works everywhere** — both in editing mode (CM6) and reading mode.
+- **Duplicate & delete** rules in one click.
+- **Localization** — settings UI in English and Russian.
+
+## Installation
+
+1. Copy `main.js`, `styles.css`, and `manifest.json` into `.obsidian/plugins/paragraph-callouts-plus/` in your vault.
+2. In Obsidian settings → "Community plugins", enable **Paragraph Callouts Plus**.
+
+## Usage
+
+1. Open the plugin settings.
+2. Create a rule: set a prefix (e.g. `>>` or `!`), configure colors and style.
+3. In a note, start a paragraph with the prefix followed by a space:
+
+```
+>> This paragraph becomes a callout.
+! And this one — a different callout with a different style.
+```
+
+4. The paragraph is automatically highlighted according to the rule.
+
+## Screenshots
+
+*(coming soon)*
+
+## Credits
+
+- [CodyBontecou](https://github.com/CodyBontecou) — author of the original [obsidian-paragraph-callouts](https://github.com/CodyBontecou/obsidian-paragraph-callouts) plugin, which served as the foundation.
+
+## License
+
+MIT
+
+# Paragraph Callouts Plus (Russian/Русский)
+
+**Плагин для [Obsidian](https://obsidian.md)** — стилизация абзацев как выносок (callouts) по символу-префиксу в начале строки.
+
+> За основу взят плагин [obsidian-paragraph-callouts](https://github.com/CodyBontecou/obsidian-paragraph-callouts) от **CodyBontecou**. Paragraph Callouts Plus — это форк с расширенной функциональностью.
 
 ---
 
 ## Возможности
 
-### Префиксные правила
-
-- Любое количество правил оформления, каждое со своим префиксом
-- **Синонимы** — несколько префиксов для одного стиля (например, `!!`, `⚠`, `WRN` могут быть одним правилом «Предупреждение»)
-- Префикс активируется **только при наличии пробела** после него:
-  - `! текст` → оформляется как выноска
-  - `!текст` → остаётся обычным текстом
-
-### Три режима отображения префикса
-
-| Режим | Описание |
-|---|---|
-| **Показывать как есть** | Префикс виден в тексте |
-| **Скрывать** | Префикс полностью убирается из отображения |
-| **Заменять** | Вместо префикса отображается произвольный символ, эмодзи, текст или SVG-иконка |
-
-При замене на SVG — иконка загружается прямо в настройках плагина и отображается инлайн в тексте.
-
-### Настройка внешнего вида
-
-Каждое правило имеет полный набор визуальных настроек:
-
-- **Цвет фона** с регулировкой прозрачности
-- **Цвет текста**
-- **Рамка** — цвет, толщина, стиль (сплошной / штрих / точечный / двойной), прозрачность
-- **Левый акцент** — отдельная цветная полоска слева, независимо от общей рамки
-- **Скругление углов**
-- **Отступы** — горизонтальные и вертикальные
-
-### Склеивание последовательных блоков
-
-Если несколько строк подряд начинаются с одного и того же префикса, они визуально объединяются в единый блок — промежуточные рамки и скругления убираются автоматически.
-
-### Работа во всех режимах
-
-Плагин работает:
-- ✅ В **Live Preview** (редактор)
-- ✅ В **Source Mode**
-- ✅ В **Reading View** (режим чтения)
-
-### Локализация
-
-Интерфейс настроек доступен на **английском** и **русском** языках с переключением в один клик.
-
----
-
-## Примеры использования
-
-В настройках плагина создаётся правило с префиксом `>>`. После этого в заметке:
-
-```
->> Это абзац-выноска. Он автоматически оформится с фоном, рамкой и акцентом.
-```
-
-Правило с префиксом `!!` и синонимами `⚠ WRN`:
-
-```
-!! Внимание: это предупреждение.
-⚠ Этот абзац тоже будет оформлен как предупреждение.
-WRN И этот тоже.
-```
-
-Замена префикса на эмодзи — в настройках правила выбирается режим «Заменить» и указывается `🔥`:
-
-```
->> Огненная новость!
-```
-
-Отображается как:
-
-> 🔥 Огненная новость!
-
----
+- **Правила-выноски** — создавайте неограниченное количество правил, каждое со своим префиксом и стилем.
+- **Префикс + пробел** — выноска срабатывает только если после префикса стоит пробел (`! текст` → выноска, `!текст` → обычный абзац).
+- **Синонимы** — несколько префиксов для одного правила (через пробел, например `⚠ WRN warning:`).
+- **Три режима отображения префикса:**
+  - **Показывать как есть** — префикс остаётся в тексте.
+  - **Скрывать** — префикс полностью убирается из отображения.
+  - **Заменять** — вместо префикса показывается произвольный символ, эмодзи, текст или встроенный SVG-значок.
+- **SVG-значки** — вставляйте SVG-код прямо в настройках, он отобразится вместо префикса в тексте.
+- **Гибкая стилизация:**
+  - Цвет фона с регулируемой прозрачностью.
+  - Цвет текста.
+  - Рамка — цвет, толщина, стиль (solid / dashed / dotted / double), прозрачность.
+  - Левый акцент — отдельный цвет, толщина, прозрачность.
+  - Скругление углов, внутренние отступы.
+- **Склейка** — идущие подряд абзацы с одним правилом визуально объединяются.
+- **Работает везде** — и в режиме редактирования (CM6), и в режиме чтения.
+- **Дублирование и удаление** правил в один клик.
+- **Локализация** — интерфейс настроек на русском и английском языках.
 
 ## Установка
 
-### Вручную
+1. Скопируйте файлы `main.js`, `styles.css` и `manifest.json` в папку `.obsidian/plugins/paragraph-callouts-plus/` вашего хранилища.
+2. В настройках Obsidian → «Сторонние плагины» включите **Paragraph Callouts Plus**.
 
-1. Скачайте файлы `main.js` и `styles.css` из этого репозитория
-2. Создайте папку `.obsidian/plugins/paragraph-callouts-plus/` в вашем хранилище
-3. Поместите туда `main.js` и `styles.css`
-4. Создайте файл `manifest.json` со следующим содержимым:
+## Использование
 
-```json
-{
-  "id": "paragraph-callouts-plus",
-  "name": "Paragraph Callouts Plus",
-  "version": "1.0.0",
-  "minAppVersion": "1.0.0",
-  "description": "Превращает абзацы с заданным префиксом в стилизованные выноски",
-  "author": "Yu1e",
-  "isDesktopOnly": false
-}
-```
-
-5. Перезапустите Obsidian
-6. Включите плагин в настройках → Сторонние плагины
-
----
-
-## Настройка
-
-Откройте **Настройки → Paragraph Callouts Plus**.
-
-Для каждого правила доступны разделы:
-
-| Раздел | Что настраивается |
-|---|---|
-| **Общее** | Название, префикс, синонимы, режим отображения префикса |
-| **Замена префикса** | Текст/эмодзи для замены, загрузка SVG |
-| **Цвета** | Фон (с прозрачностью), цвет текста |
-| **Рамка и акцент** | Вкл/выкл рамки и левого акцента, их цвета, толщина, стиль |
-| **Форма** | Скругление углов, горизонтальные и вертикальные отступы |
-
-Правила можно **дублировать** и **удалять**. Настройки применяются мгновенно с живым предпросмотром.
-
----
-
-## Структура проекта
+1. Откройте настройки плагина.
+2. Создайте правило: задайте префикс (например `>>` или `!`), настройте цвета и стиль.
+3. В заметке начните абзац с префикса и пробела:
 
 ```
-├── main.js       — логика плагина (единый бандл)
-├── styles.css    — стили интерфейса настроек и оформления выносок
-└── README.md     — это описание
+>> Этот абзац станет выноской.
+! А этот — другой выноской с другим стилем.
 ```
 
-Плагин не требует сборки — `main.js` является готовым бандлом, который Obsidian загружает напрямую.
+4. Абзац автоматически подсветится в соответствии с правилом.
 
----
+## Скриншоты
+
+*(скоро)*
+
+## Благодарности
+
+- [CodyBontecou](https://github.com/CodyBontecou) — автор оригинального плагина [obsidian-paragraph-callouts](https://github.com/CodyBontecou/obsidian-paragraph-callouts), который послужил основой.
 
 ## Лицензия
 
